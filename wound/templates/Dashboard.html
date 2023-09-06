@@ -1,0 +1,87 @@
+{% extends "layout/Layout.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+{% block content %}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column my-0">
+
+<!-- Begin Page Content -->
+<div class="container">
+
+<!-- Outer Row -->
+<div class="row justify-content-center">
+
+    <div class="card-body">
+        <div class="text-left">
+            <h1 class="h4 text-gray-900 my-3">Dashboard Klinik</h1>
+        </div>
+        {% with messages = get_flashed_messages() %}  
+        {% if messages %}  
+            {% for message in messages %}  
+                <p>{{ message }}</p>  
+            {% endfor %}  
+        {% endif %}  
+        {% endwith %} 
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="p-5">
+
+                <!-- Content Row -->
+                <div class="row">
+                <div class="col-xl-10 col-md-6 mb-4">
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        class="fas fa-sm text-white-50"></i> Kinerja Perawat</a>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        class="fas fa-sm text-white-50"></i> Cost Perawatan Pasien</a>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        class="fas fa-sm text-white-50"></i> Income Masuk</a>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        class="fas fa-sm text-white-50"></i> Balance Keuangan</a>
+                </div>
+                </div>
+
+                <div class="row">
+
+                <!-- Area Chart -->
+                <div class="col-xl-8 col-lg-7">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div
+                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Cost Perawatan Pasien</h6>
+                            <div class="dropdown no-arrow">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="chart-area">
+                                <canvas id="myAreaChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+</div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,77 @@
+{% extends "layout/Layout.html" %}
+
+{% block title %} Data Kajian Pasien {% endblock %} 
+
+{% block content %}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column my-0">
+  
+  <!-- Begin Page Content -->
+  <div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="card-body">
+          <div class="text-left">
+              <h1 class="h4 text-gray-900 my-3">Data Kajian Luka</h1>
+          </div>
+
+          <!-- DataTales Example -->
+          <div class="card mb-4">
+            <!-- Topbar Search -->
+            <div class="card-body">
+
+              <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                  <div class="input-group">
+                      <input type="text" name="search_query" class="form-control bg-light border-0 small" placeholder="cari berdasarkan nik/nama">
+                      <div class="input-group-append">
+                          <button class="btn btn-primary" type="submit">
+                              <i class="fas fa-sm">cari</i>
+                          </button>
+                      </div>
+                  </div>
+              </form>
+
+              <div class="card-body">
+                  <div class="table-responsive">
+
+                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                          <thead>
+                              <tr>
+                                  <th>NIK</th>
+                                  <th>Nama</th>
+                                  <th>action</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              {% for item in data %}
+                              <tr>
+                                  <td>{{ item.nik }}</td>
+                                  <td>{{ item.nama }}</td>
+                                  <td><a class="btn btn-primary btn-user btn-block" href="{{url_for('profil_data_kajian', _id = item._id )}}">lihat</a></td>
+                              </tr>
+                              {% endfor %}
+                          </tbody>
+                      </table>
+                      
+                  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+{% endblock content %}
+
+
+

@@ -1,0 +1,72 @@
+{% extends "layout/Layout.html" %}
+
+{% block title %} Daftar Staff Klinik {% endblock %}
+
+{% block content %}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column my-0">
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="card-body">
+
+                <div class="text-left">
+                    <h1 class="h4 text-gray-900 my-3">Daftar Staff Klinik</h1>
+                </div>
+
+                <!-- DataTales Example -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>NIP</th>
+                                        <th>Nama</th>
+                                        <th>Jabatan</th>
+                                        <th>action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in data %}
+                                    <tr>
+                                        <td>{{ item.nip }}</td>
+                                        <td>{{ item.nama }}</td>
+                                        <td>{{ item.role }}</td>
+                                        <td><a class="btn btn-primary btn-user btn-block" href="{{url_for('profile_staff', _id = item._id )}}">lihat</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class=" row">
+                            <div class="col-sm-3">
+                                <a class="btn btn-primary btn-user btn-block" href="{{url_for('manage_accounts')}}">
+                                Kembali</button>
+                                </a>
+                            </div>
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+{% endblock content %}
+
+

@@ -1,0 +1,151 @@
+{% extends "layout/Layout.html" %}
+
+{% block title %} Tambah Pasien Baru {% endblock %} 
+
+{% block content %}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column my-0">
+  
+  <!-- Begin Page Content -->
+  <div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="card-body">
+          <div class="text-left">
+              <h1 class="h4 text-gray-900 my-3">Tambah Pasien Baru</h1>
+          </div>
+          {% with messages = get_flashed_messages() %}  
+            {% if messages %}  
+              {% for message in messages %}  
+                    <p>{{ message }}</p>  
+              {% endfor %}  
+            {% endif %}  
+          {% endwith %} 
+          <!-- Nested Row within Card Body -->
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="p-5">
+                      <form class="user" method="POST" action="/pasien">
+                          <div class="form-group row">
+                              <div class="col-sm-6">
+                                  <label class="text-gray-900" for="email">Email*</label>
+                                  <input type="email" class="form-control form-control-user" name="email"
+                                  id="email aria-describedby="emailHelp" placeholder="Enter Email Address" required>
+                              </div>
+                              <div class="col-sm-6">
+                                  <label class="text-gray-900" for="passw">Password*</label>
+                                  <input type="password" class="form-control form-control-user" name="passw" minlength="8" maxlength="16"
+                                      id="passw" placeholder="Enter Password" required>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group row">
+                              <div class="col-sm-6">
+                                <label class="text-gray-900" for="nik">NIK*</label>
+                                <input type="number" class="form-control form-control-user" minlength="16" name="nik"
+                                id="nik" placeholder="Enter NIK" required>
+                              </div>
+                              <div class="col-sm-6">
+                                  <label class="text-gray-900" for="nama">Nama*</label>
+                                  <input type="text" class="form-control form-control-user" name="nama"
+                                  id="nama" placeholder="Enter Name" required>
+                              </div>
+                          </div>
+
+                          <div class="form-group row">
+                              <div class="col-sm-6">
+                                <label class="text-gray-900" for="born_date">Tanggal Lahir*</label>
+                                <input type="date" class="form-control form-control-user" name="born_date"
+                                id="born_date" required>
+                              </div>
+                              <div class="col-sm-6">
+                                  <label class="text-gray-900" for="usia">Usia*</label>
+                                  <input type="number" class="form-control form-control-user" name="usia"
+                                  id="usia" placeholder="Enter Age" required>
+                              </div>
+                          </div>
+
+                          <div class="form-group row">
+                              <div class="col-sm-6">
+                                  <label class="text-gray-900" for="kelamin">Jenis Kelamin*</label>
+                                  <br>
+                                  <input type="radio" name="kelamin" id="laki-laki" value="laki-laki" required>
+                                  <label for="html">Laki-laki</label><br>
+                                  <input type="radio" name="kelamin" id="perempuan" value="perempuan" required>
+                                  <label for="html">Perempuan</label><br>
+                              </div>
+                              <div class="col-sm-6">
+                                  <label class="text-gray-900" for="kelamin">Agama*</label>
+                                  <br>
+                                  <input type="radio" name="agama" id="islam" value="islam" required>
+                                  <label for="html">Islam</label><br>
+                                  <input type="radio" name="agama" id="kristen" value="kristen" required>
+                                  <label for="html">Kristen</label><br>
+                                  <input type="radio" name="agama" id="hindu" value="hindu" required>
+                                  <label for="html">Hindu</label><br>
+                                  <input type="radio" name="agama" id="buddha" value="buddha" required>
+                                  <label for="html">Buddha</label><br>
+                                  <input type="radio" name="agama" id="konghucu" value="konghucu" required>
+                                  <label for="html">Konghucu</label><br>
+                              </div>
+                          </div>
+
+                          <div class="form-group row">
+                              <div class="col-sm-6">
+                                <label class="text-gray-900" for="alamat">Alamat*</label>
+                                <input type="text" class="form-control form-control-user" name="alamat"
+                                id="alamat" placeholder="Enter Address" required>
+                              </div>
+                              <div class="col-sm-6">
+                                  <label class="text-gray-900" for="no_hp">Nomor Handphone*</label>
+                                  <input type="number" class="form-control form-control-user" name="no_hp"
+                                  id="no_hp" placeholder="Enter handphone number" required>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label class="text-gray-900" for="no_bpjs">Nomor BPJS</label>
+                              <input type="number" class="form-control form-control-user" name="no_bpjs"
+                              id="no_bpjs" placeholder="Enter BPJS Number">
+                            </div>
+                          </div>
+                        
+                          <div class=" row">
+                            <div class="col-sm-3">
+                              <a class="btn btn-primary btn-user btn-block" href="{{url_for('manage_accounts')}}">
+                                Kembali</button>
+                              </a>
+                            </div>
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3">
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                              Submit</button>
+                            </div>
+                          </div>
+
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+{% endblock content %}
+
+
+
+
+
+  

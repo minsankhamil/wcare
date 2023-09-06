@@ -1,0 +1,55 @@
+{% extends "layout/Layout.html" %}
+
+{% block title %} Pengelolaan Akun {% endblock %} 
+
+{% block content %}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column my-0">
+
+    <!-- Begin Page Content -->
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+        <div class="card-body">
+            <div class="text-left">
+                <h1 class="h4 text-gray-900 my-3">Pendaftaran Berobat</h1>
+            </div>
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="p-5">
+                                <div class="form-group row">
+                                    <div class="col-sm-4">
+                                        <a href="{{url_for('pendaftaran_pasien_berobat_offline')}}" class="btn btn-primary btn-user btn-block">
+                                        Offline
+                                        </a>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <a href="{{url_for('list_pasien_daftar_berobat_online')}}" class="btn btn-primary btn-user btn-block">
+                                        Online
+                                        </a>
+                                    </div>
+                                </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+{% endblock content %}
+
+  

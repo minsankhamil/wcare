@@ -1,0 +1,75 @@
+{% extends "layout/Layout.html" %}
+
+{% block title %} Layanan {% endblock %} 
+
+{% block content %}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column my-0">
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="card-body">
+
+                <div class="text-left">
+                    <h1 class="h4 text-gray-900 my-3">Inventaris</h1>
+                </div>
+                {% with messages = get_flashed_messages() %}  
+                    {% if messages %}  
+                    {% for message in messages %}  
+                            <p>{{ message }}</p>  
+                    {% endfor %}  
+                    {% endif %}  
+                {% endwith %}
+                <!-- DataTales Example -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>ID Layanan</th>
+                                        <th>Nama Layanan</th>
+                                        <th>Harga</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in data %}
+                                    <tr>
+                                        <td>{{ item._id }}</td>
+                                        <td>{{ item.nama_layanan }}</td>
+                                        <td>{{ item.harga }}</td>
+                                        <td><a class="btn btn-primary btn-user btn-block" href="{{url_for('detail_layanan', _id = item._id )}}">lihat</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class=" row">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3">
+                                <a type="submit" class="btn btn-primary btn-user btn-block" href="{{url_for('layanan')}}">
+                                Tambah Layanan</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+{% endblock content %}

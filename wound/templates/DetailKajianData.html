@@ -1,0 +1,144 @@
+{% extends "layout/Layout.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+{% block content %}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column my-0">
+    
+    <!-- Begin Page Content -->
+    <div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+        <div class="card-body">
+            <div class="text-left">
+                <h1 class="h4 text-gray-900 my-3">Data Kajian Luka</h1>
+            </div>
+            {% with messages = get_flashed_messages() %}  
+            {% if messages %}  
+                {% for message in messages %}  
+                    <p>{{ message }}</p>  
+                {% endfor %}  
+            {% endif %}  
+            {% endwith %} 
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="">
+                    {% for item in data %}
+                    <!-- Content Row -->
+                    <div>
+                    <div class="col-xl-10 col-md-6 mb-4">
+                        <a href="{{url_for('profil_data_kajian', _id = item._id )}}" class="d-none d-sm-inline-block btn btn-sm btn-primary "><i
+                            class="fas fa-sm text-white-50"></i> Profil </a>
+                        <a href="{{url_for('list_data_kajian_luka_pasien', _id = item._id )}}" class="d-none d-sm-inline-block btn btn-sm btn-primary "><i
+                            class="fas fa-sm text-white-50"></i> Histori Kajian </a>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary "><i
+                            class="fas fa-sm text-white-50"></i> Galeri Luka </a>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="col-lg-12">
+                        <div class="p-5">
+                                <div class=" row">
+                                    <div class="col-sm-6">
+                                        <label class="text-gray-900" for="email">Email</label>
+                                        <br>
+                                        <label for="email">{{ item.email }}</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="text-gray-900" for="nama">NIK</label>
+                                        <br>
+                                        <label for="nama">{{ item.nik }}</label>
+                                    </div>
+                                </div>
+                                
+                                <div class=" row">
+                                    <div class="col-sm-6">
+                                        <label class="text-gray-900" for="nama">Nama</label>
+                                        <br>
+                                        <label for="nama">{{ item.nama }}</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="text-gray-900" for="born_date">Tanggal Lahir</label>
+                                        <br>
+                                        <label for="born_date">{{ item.born_date }}</label>
+                                    </div>
+                                </div>
+    
+                                <div class=" row">
+                                    <div class="col-sm-6">
+                                        <label class="text-gray-900" for="usia">Usia</label>
+                                        <br>
+                                        <label for="usia">{{ item.usia }}</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="text-gray-900" for="alamat">Alamat</label>
+                                        <br>
+                                        <label for="alamat">{{ item.alamat }}</label>
+                                    </div>
+                                </div>
+    
+                                <div class=" row">
+                                    <div class="col-sm-6">
+                                        <label class="text-gray-900" for="kelamin">Jenis Kelamin</label>
+                                        <br>
+                                        <label for="nama">{{ item.kelamin }}</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="text-gray-900" for="kelamin">Agama</label>
+                                        <br>
+                                        <label for="nama">{{ item.agama }}</label>
+                                    </div>
+                                </div>
+    
+                                <div class=" row">
+                                    <div class="col-sm-6">
+                                        <label class="text-gray-900" for="no_hp">Nomor Handphone</label>
+                                        <br>
+                                        <label for="nama">{{ item.no_hp }}</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="text-gray-900" for="no_bpjs">Nomor BPJS</label>
+                                        <br>
+                                        <label for="nama">{{ item.no_bpjs }}</label>
+                                    </div>
+                                </div>
+                                
+                                <div class=" row">
+                                    <div class="col-sm-3">
+                                        <a type="submit" class="btn btn-primary btn-user btn-block" href="{{url_for('data_kajian_pasien')}}">
+                                        Back</a>
+                                    </div>
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-3"></div>
+                                </div>
+                        </div>
+    
+                    </div>
+    
+                    </div>
+                    {% endfor %}
+                    
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    </div>
+
+</div>
+
+{% endblock content %}

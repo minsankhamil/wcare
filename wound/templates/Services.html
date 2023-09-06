@@ -1,0 +1,85 @@
+{% extends "layout/Layout.html" %}
+
+{% block title %} Tambah Layanan {% endblock %} 
+
+{% block content %}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column my-0">
+  
+  <!-- Begin Page Content -->
+  <div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="card-body">
+          <div class="text-left">
+              <h1 class="h4 text-gray-900 my-3">Tambah Layanan Baru</h1>
+          </div>
+          {% with messages = get_flashed_messages() %}  
+            {% if messages %}  
+              {% for message in messages %}  
+                    <p>{{ message }}</p>  
+              {% endfor %}  
+            {% endif %}  
+          {% endwith %}
+          <!-- Nested Row within Card Body -->
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="p-5">
+                      <form class="user" method="POST" action="/layanan">
+                          <div class="form-group row">
+                              <div class="col-sm-6">
+                                <label class="text-gray-900" for="nama_layanan">Nama Layanan*</label>
+                                <input type="text" class="form-control form-control-user" name="nama_layanan"
+                                id="nama_layanan" required>
+                              </div>
+                              <div class="col-sm-6">
+                                <label class="text-gray-900" for="keterangan">Keterangan*</label>
+                                <input type="text" class="form-control form-control-user" name="keterangan"
+                                id="keterangan" required>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group row">
+                              <div class="col-sm-6">
+                                <label class="text-gray-900" for="harga">Harga*</label>
+                                <input type="number" class="form-control form-control-user" name="harga"
+                                id="harga" required>
+                              </div>
+                          </div>
+                          
+                          <div class=" row">
+                            <div class="col-sm-3">
+                              <a class="btn btn-primary btn-user btn-block" href="{{url_for('list_layanan')}}">
+                                Kembali</button>
+                              </a>
+                            </div>
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3">
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                              Submit</button>
+                            </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+{% endblock content %}
+
+
+
+
+  

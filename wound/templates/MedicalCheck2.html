@@ -1,0 +1,67 @@
+{% extends "layout/Layout.html" %}
+
+{% block title %} Daftar Pasien {% endblock %}
+
+{% block content %}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column my-0">
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+            <div class="card-body">
+                <div class="text-left">
+                    <h1 class="h4 text-gray-900 my-3">List hasil pemeriksaan kesehatan pasien</h1>
+                </div>
+                <!-- DataTales Example -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>ID Pemeriksaan Kesehatan</th>
+                                        <th>Tanggal Pemeriksaan</th>
+                                        <th>action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in data %}
+                                    <tr>
+                                        <td>{{ item._id }}</td>
+                                        <td>{{ item.tanggal }}</td>
+                                        <td><a class="btn btn-primary btn-user btn-block" href="{{ url_for('detail_medical_check_data', _id=item._id )}}">lihat</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class=" row">
+                            <div class="col-sm-3">
+                                <a class="btn btn-primary btn-user btn-block" href="{{url_for('list_patient_medical_check')}}">
+                                Kembali</button>
+                                </a>
+                            </div>
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+{% endblock content %}
+
+
