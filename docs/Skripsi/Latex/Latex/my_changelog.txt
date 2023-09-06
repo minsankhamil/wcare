@@ -1,0 +1,11 @@
+20 mar 2022
+- persamaan fx & fy (bab 2) -> active contour
+	* ubah diagram (bab 3) -> active contour
+
+dataset
+- mencatat data mentah
+- memilih dataset yang akan dipakai
+	* resize data
+	* segmentasi menggunakan edge detection, treshold, atau yg lain
+	* inisialisasi awal
+

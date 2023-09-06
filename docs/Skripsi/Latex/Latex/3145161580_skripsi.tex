@@ -1,0 +1,261 @@
+%-------------------------------------------------------------------------------
+%                      Template Naskah Skripsi
+%               	Berdasarkan format JTETI FT UGM
+% 						(c) @gunturdputra 2014
+%-------------------------------------------------------------------------------
+
+%Template pembuatan naskah skripsi.
+\documentclass{jtetiskripsi}
+
+%Untuk prefiks pada daftar gambar dan tabel
+\usepackage[titles]{tocloft}
+\renewcommand\cftfigpresnum{Gambar\  }
+\renewcommand\cfttabpresnum{Tabel\   }
+
+%Untuk hyperlink dan table of content
+\usepackage[hidelinks]{hyperref}
+\newlength{\mylenf}
+\settowidth{\mylenf}{\cftfigpresnum}
+\setlength{\cftfignumwidth}{\dimexpr\mylenf+2em}
+\setlength{\cfttabnumwidth}{\dimexpr\mylenf+2em}
+
+%Untuk Bold Face pada Keterangan Gambar
+\usepackage[labelfont=bf]{caption}
+
+%Untuk caption dan subcaption
+\usepackage{caption}
+\usepackage{subcaption}
+
+%pdf
+\usepackage{pdfpages}
+
+%table
+\usepackage{graphics}
+
+\usepackage{wrapfig}
+
+%equation
+\usepackage{amsmath}
+
+%hypenat
+\usepackage[none]{hyphenat}
+
+%bibliography
+\usepackage{natbib}
+
+%directory tree
+\usepackage{dirtree}
+
+%code
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{black}{rgb}{0,0,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{black},
+	keywordstyle=\color{black},
+	commentstyle=\color{black},
+	stringstyle=\color{black},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+
+\usepackage{amsfonts}
+\newcommand{\tickYes}{\checkmark}
+\usepackage{pifont}
+\newcommand{\tickNo}{\hspace{1pt}\ding{55}}
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk data proposal skripsi
+%-----------------------------------------------------------------
+\titleind{Rancang Bangun Sistem Informasi Keperawatan Luka}
+
+\fullname{Muhammad Insan Khamil}
+
+\idnum{3145161580}
+
+%\approvaldate{-}
+\approvaldate{-}
+
+\degree{Sarjana Ilmu Komputer}
+
+\yearsubmit{2023}
+
+\program{Ilmu Komputer}
+
+\dept{Ilmu Komputer}
+
+% \firstsupervisor{Med Irzal, M. Kom.}
+% \firstnip{197706152003121001}
+
+% \firstsupervisor{Ir. Fariani Hermin Indiyah, MT}
+% \firstnip{196002111987032001}
+
+\firstsupervisor{Muhammad Eka Suryana, M.Kom}
+\firstnip{198512232012121002}
+
+\secondsupervisor{Drs. Mulyono, M.Kom}
+\secondnip{196605171994031003}
+
+%hypenation
+
+
+%-----------------------------------------------------------------
+%Disini akhir masukan untuk data proposal skripsi
+%-----------------------------------------------------------------
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\begin{document}
+\cover
+%\include{pengesahan}
+\newpage
+\pagenumbering{roman}
+\addcontentsline{toc}{chapter}{LEMBAR PERSETUJUAN HASIL SIDANG SKRIPSI}
+\include{persetujuan}
+\addcontentsline{toc}{chapter}{LEMBAR PERNYATAAN}
+\include{orisinalitas}
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan Acknowledment
+%-----------------------------------------------------------------
+\acknowledgment
+\begin{flushright}
+	\emph{Untuk Bapak, Ibu, dan Adik-adikku}
+\end{flushright}
+
+%-----------------------------------------------------------------
+%Disini awal masukan Intisari
+%-----------------------------------------------------------------
+\begin{abstractind}
+	\textbf{Muhammad Insan Khamil}. Rancang Bangun Sistem Informasi Keperawatan Luka. Skripsi. Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Negeri Jakarta. 2023. Di bawah bimbingan Muhammad Eka Suryana, M. Kom dan Drs. Mulyono, M. Kom
+	\vskip1cm
+	
+	Saat ini pencatatan data pengkajian luka dan pemeriksaan kesehatan masih dilakukan secara tradisional. Hal ini menyebabkan pemanfaatan informasi menjadi kurang maksimal, berjalan kurang efektif, lama dalam prosesnya dan menyulitkan proses pertukaran data medis antar divisi medis. Sehingga, diperlukannya aplikasi yang dapat mengarsipkan data pengkajian luka dan pemeriksaan kesehatan secara digital dan memudahkan dalam pertukaran data antar divisi medis. Adapun Penelitian ini bertujuan untuk merancang sistem informasi keperawatan luka di klinik \emph{Moist Care}. Jenis Penelitian ini adalah Pengembangan/\emph{Research and Development}. Data diambil melalui paparan presentasi bersama ibu Irma Puspita Arisanti selaku pemilik klinik \emph{Moist Care}. Hasil penelitian yang didapatkan yaitu: (1) Terciptanya sistem informasi keperawatan luka yang sudah mengimplementasikan sebagian fitur-fitur pada \emph{product backlog}. Diantaranya pembuatan akun pasien, \emph{dashboard} klinik, pemeriksaan kesehatan dan sebagain proses pengobatan luka (\emph{view} dan \emph{web service} inventaris dan layanan). Adapun perancangannya dilakukan dengan metode \emph{scrum} dengan tahapan penyusunan \emph{product backlog}, \emph{sprint backlog} dan terbagi menjadi empat \emph{sprint}; (2) Terimplementasikannya \emph{Web Service} yang berfungsi sebagai \emph{Back-End} sistem informasi keperawatan luka; (3) Sistem informasi keperawatan luka dikembangkan menggunakan bahasa \emph{python} dengan bantuan \emph{framework flask}. 
+	
+	\bigskip
+	\noindent
+	\textbf{Kata kunci :} Sistem informasi, \emph{web service}, arsip data, pertukaran data.
+\end{abstractind}
+
+\begin{abstracteng}
+	
+	\textbf{Muhammad Insan Khamil}. Wound Nursing Information System Design. Thesis. Faculty of Mathematics and Natural Sciences, State University of Jakarta. 2023. Under the guidance of Muhammad Eka Suryana, M. Kom and Drs. Mulyono, M. Kom
+	\vskip1cm
+	
+	\emph{Currently, the recording of wound assessment data and medical examinations is still carried out in the traditional way}. \emph{This causes the utilization of information to be less than optimal, runs less effectively, takes longer to process and complicates the process of exchanging medical data between medical divisions}. \emph{Thus, an application is needed that can digitally archive wound assessment and medical examination data and facilitate the exchange of data between medical divisions}. \emph{This study aims to design a wound nursing clinical information system at the Moist Care clinic}. \emph{This type of research is Research and Development}. \emph{The data was taken through a presentation with Mrs. Irma Puspita Arisanti as the owner of the Moist Care clinic}. \emph{The research results obtained are}: (1) \emph{The creation of a wound nursing information system that has implemented some of the features in the product backlog}. \emph{Including creating patient accounts, clinical dashboards, health checks and part of the wound treatment process (view and web service of inventory and services)}. \emph{The design is done using the scrum method with the stages of preparing a product backlog, sprint backlog and divided into four sprints}; (2) \emph{Implementation of a Web Service that functions as the Back-End of wound nursing information systems}; (3) \emph{Wound nursing information systems were developed in python with the help of the flask framework}.
+	
+	\bigskip
+	\noindent
+	\textbf{Keywords}: \emph{Information system, web service, data archive, data exchange}.
+\end{abstracteng}
+
+
+%-----------------------------------------------------------------
+%Disini akhir masukan Intisari
+%-----------------------------------------------------------------
+%-----------------------------------------------------------------
+
+
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk Prakata
+%-----------------------------------------------------------------
+\preface
+\pagestyle{chapterheading}
+Atas berkat rahmat Allah Yang Maha Kuasa, penulis bisa menyelesaikan skripsi yang berjudul \textbf{"Rancang Bangun Sistem Informasi Keperawatan Luka"}. Selain itu penulis juga berterima kasih kepada pihak-pihak pendukung dan mendoakan semoga kebaikan dan jasa-jasa yang sudah diberikan dibalas Allah Yang Maha Kuasa. Adapun pihak-pihak tersebut sebagai berikut:
+
+\begin{enumerate}
+	\item Yth. Kedua orang tua dan adik-adik penulis yang selama ini telah senantiasa sabar membimbing, memberikan semangat, mengingatkan, dan mendo’akan penulis.
+	\item Yth. Ibu Dr. Ria Arafiah, M. Si. selaku Koordinator Program Studi S-1 Ilmu Komputer Universitas Negeri Jakarta  yang sudah membimbing penulis dalam hal akademik,
+	\item Yth. Bapak Muhammad Eka Suryana, M. Kom. selaku dosen pembimbing I yang banyak memberikan bantuan, masukan, dan saran baik secara konten maupun penulisan,
+	\item Yth. Bapak Drs. Mulyono, M. Kom. selaku dosen pembimbing II sekaligus dosen pembimbing akademik yang banyak memberikan bantuan, masukan, dan saran baik secara konten maupun penulisan,
+	\item Yth. Seluruh dosen program studi S-1 Ilmu Komputer yang sudah memberikan banyak ilmu kepada penulis selama perkuliahan,
+	\item Yth. Agus Setiawan, Fandy Alifian, Dio Aryanto Dio Wicaksono dan teman-teman Ilmu Komputer angkatan 2016 yang senantiasa menemani, memberikan semangat, dan motivasi dari semenjak awal dunia perkuliahan,
+	\item Yth. Fauzan Rizky Ramadhan, Abdul Ghaffar Sidik, Sony Ariyanto, dan Imam Nuddudin yang senantiasa menemani saya saat suka dan duka dalam menyelesaikan skripsi,
+\end{enumerate}
+
+Merupakan kekurangan dari pribadi penulis jika masih ditemukan banyak kesalahan di dalam ini. Penulis sangat berterima kasih jika terdapat saran-saran membangun terkait skripsi penulis.
+
+\vspace{.5cm}
+
+\begin{tabular}{p{7.5cm}c}
+	&Jakarta, 17 Agustus 2023\\
+	&\\
+	&\\
+	&\\
+	&\textbf{Muhammad Insan Khamil}
+\end{tabular}
+
+%-----------------------------------------------------------------
+%Disini akhir masukan untuk muka skripsi
+%-----------------------------------------------------------------
+\tableofcontents 
+\addcontentsline{toc}{chapter}{DAFTAR ISI}
+\listoftables
+\addcontentsline{toc}{chapter}{DAFTAR TABEL}
+\listoffigures
+\addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+\pagestyle{chapterheading}
+
+
+
+\begin{counterpage}
+\end{counterpage}
+
+\pagestyle{myheadings}
+\markright{}
+%Disini awal masukan untuk Bab
+%-----------------------------------------------------------------
+\include{bab1}
+\include{bab2}
+\include{bab3}
+\include{bab4}
+\include{bab5}
+
+%-----------------------------------------------------------------
+%Disini akhir masukan Bab
+%-----------------------------------------------------------------
+
+
+%-----------------------------------------------------------------
+% Disini awal masukan untuk Daftar Pustaka
+% - Daftar pustaka diambil dari file .bib yang ada pada folder ini
+%   juga.
+% - Untuk memudahkan dalam memanajemen dan menggenerate file .bib
+%   gunakan reference manager seperti Mendeley, Zotero, EndNote,
+%   dll.
+%-----------------------------------------------------------------
+\begingroup
+	\setlength{\bibsep}{12pt}
+	\setstretch{1}
+	\bibliography{daftar-pustaka}
+	\bibliographystyle{apa}
+	\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+\endgroup
+%-----------------------------------------------------------------
+%Disini akhir masukan Daftar Pustaka
+%-----------------------------------------------------------------
+\addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
+\include{lampiran}
+\addcontentsline{toc}{chapter}{DAFTAR RIWAYAT HIDUP}
+\include{cv}
+
+
+\end{document}
